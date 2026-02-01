@@ -1,6 +1,6 @@
 # 📝 Flask To-Do App
 
-A simple **To-Do web application** built with **Flask** and **SQLite**, styled with **Bootstrap**. Track your tasks easily and efficiently!
+A simple **To-Do web application** built with **Flask** and **SQLAlchemy**, using SQLite as the database styled with **Bootstrap**. Track your tasks easily and efficiently!
 
 ---
 
