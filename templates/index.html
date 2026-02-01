@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+      <form action="/" method="POST">
+      <h3>Add a new to do task</h3>
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" id="title" name="title">
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <input type="text" class="form-control" id="description" name="desc">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">I'll complete my todo asap</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+  <div class="container">
+    <table class="table table-striped">
+      <h3 class="mt-3">My To Do list:</h3>
+  <thead>
+    <tr>
+      <th scope="col">SNo</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Date and Time created</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for todo in alltodos %}
+    <tr>
+      <th scope="row">{{loop.index}}</th>
+      <td>
+        {% if todo.completed %}
+        <s>{{todo.title}}</s>
+        {% else %}
+        {{todo.title}}
+        {% endif %}
+      </td>
+      <td>
+        {% if todo.completed %}
+        <s>{{todo.desc}}</s>
+        {% else %}
+          {{todo.desc}}
+        {% endif %}
+      </td>
+      <td>{{todo.dateCreated}}</td>
+      <td>
+        <form action="/complete/{{todo.sno}}" method="POST" style="display:inline">
+        <button type="submit" class="btn btn-outline-success">Mark as complete</button>
+        </form>
+        <form action="/delete/{{todo.sno}}" method="POST" style="display:inline">
+        <button type="submit" class="btn btn-outline-danger">Delete</button>
+        </form>
+        <form action="/edit/{{todo.sno}}" method="GET" style="display:inline">
+        <button type="submit" class="btn btn-outline-warning">Edit</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+ </div>
+</body>
+</html>
