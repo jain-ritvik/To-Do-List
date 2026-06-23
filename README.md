@@ -20,13 +20,13 @@ A simple **To-Do web application** built with **Flask** and **SQLAlchemy**, usin
 ## Screenshots
 
 ### Add a new to-do
-![Add a new to-do](images/add a new to-do.png)
+![Add a new to-do](images/add-a-new-to-do.png)
 
 ### List of all to-dos
-![List of all to-dos](images/all to-do lists.png)
+![List of all to-dos](images/all-to-do-lists.png)
 
 ### Edit a to-do
-![Edit a to-do](images/edit a to-do.png)
+![Edit a to-do](images/edit-a-to-do.png)
 
 ## 📂 Project Structure
 
@@ -39,9 +39,9 @@ A simple **To-Do web application** built with **Flask** and **SQLAlchemy**, usin
 │   └── thankss.html
 ├── static/
 ├── images/
-│   ├── add a new to-do.png
-│   ├── all to-do lists.png
-│   └── edit a to-do.png
+│   ├── add-a-new-to-do.png
+│   ├── all-to-do-lists.png
+│   └── edit-a-to-do.png
 ├── instance/
 │   └── todo.db             # Database
 ├── env/
